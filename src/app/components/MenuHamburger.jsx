@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLink from '/src/app/components/Navlink.jsx';
+import NavLink from './Navlink.jsx';
 
 const MenuHamburger = ({ links }) => {
   return (
