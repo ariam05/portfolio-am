@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import ProjectCard from './ProjectCard';
-import ProjectTag from './ProjectTag';
+import ProjectCard from './ProjectCard.jsx';
+import ProjectTag from './ProjectTag.jsx';
 
 
 
