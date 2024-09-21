@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import NavLink from './Navlink.jsx';
+import NavLink from './NavLink.jsx';
 
 const MenuHamburger = ({ links }) => {
   return (
