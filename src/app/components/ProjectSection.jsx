@@ -13,11 +13,11 @@ const projectsData = [
         image: "/images/projects/1.png",
         tags: ["All", "Web"],
         gitUrl: "https://github.com/ariam05/2d-platform-game",
-        previewUrl: "/"
+        previewUrl: "https://youtu.be/it1mxqHXcGc"
     },
     {
         id: 2,
-        title: "Bear Territory",
+        title: "Bear Territory (Mobile App)",
         description: "Discover the ultimate study spots with Bear Territory, a mobile app designed to help UC Berkeley students find the perfect place to focus and study! Seamlessly integrating Python, React Native, and the Google Maps API, this app guides users to ideal locations across campus. Interface crafted using Figma, Bear Territory ensures an intuitive user experience that makes navigation effortless.",
         image: "/images/projects/2.png",
         tags: ["All", "Mobile"],
@@ -27,7 +27,7 @@ const projectsData = [
     },
     {
         id: 7,
-        title: "Bear Territory",
+        title: "Bear Territory (UX/UI Design)",
         description: "Discover the ultimate study spots with Bear Territory, a mobile app designed to help UC Berkeley students find the perfect place to focus and study! Seamlessly integrating Python, React Native, and the Google Maps API, this app guides users to ideal locations across campus. Interface crafted using Figma, Bear Territory ensures an intuitive user experience that makes navigation effortless.",
         image: "/images/projects/bear.png",
         tags: ["All", "UX/UI"],
@@ -67,13 +67,13 @@ const projectsData = [
         description: "Experience seamless travel planning with the AC Transit Alex VUI, an intuitive virtual user interface designed to simplify your journey! This project showcases a sleek and user-friendly design, allowing passengers to effortlessly navigate transit options, check schedules, and receive personalized travel recommendations through conversational interactions.",
         image: "/images/projects/alex.png",
         tags: ["All", "UX/UI"],
-        gitUrl: "https://www.figma.com/design/7IQwm04wvUfQHoDdrIQtLg/AC-Transit-VUI?node-id=0-1&m=dev&t=H3Ll4QNwqQvSnkqa-1",
+        gitUrl: "https://drive.google.com/file/d/1ZI84_exk9fHPnz6Izg36xKMiBQ2xo9tZ/view?usp=sharing",
         previewUrl: "https://www.figma.com/design/7IQwm04wvUfQHoDdrIQtLg/AC-Transit-VUI?node-id=0-1&m=dev&t=H3Ll4QNwqQvSnkqa-1"
     },
 ]
 
 const ProjectSection = () => {
-    const [tag, setTag] = useState("All");
+    const [tag, setTag] = useState("Web");
     const handleTagChange = (newTag) => {
         setTag(newTag);
     };
@@ -85,11 +85,10 @@ const ProjectSection = () => {
     <>
         <h2>My Projects</h2>
         <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
-            <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"}/>
             <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"}/>
             <ProjectTag onClick={handleTagChange} name="UX/UI" isSelected={tag === "UX/UI"}/>
             <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"}/>
-            
+            <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"}/>
         </div>
         <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
         {filteredProjects.map((project) => (
