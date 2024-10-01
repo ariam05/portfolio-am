@@ -70,6 +70,15 @@ const projectsData = [
         gitUrl: "https://drive.google.com/file/d/1ZI84_exk9fHPnz6Izg36xKMiBQ2xo9tZ/view?usp=sharing",
         previewUrl: "https://www.figma.com/design/7IQwm04wvUfQHoDdrIQtLg/AC-Transit-VUI?node-id=0-1&m=dev&t=H3Ll4QNwqQvSnkqa-1"
     },
+    {
+        id: 8,
+        title: "Job Posting Site",
+        description: "Job posting site to discover hassle-free job searching, a streamlined platform designed to make finding and posting jobs easier than ever! This project features a clean, user-friendly interface where employers can quickly post job openings and job seekers can effortlessly browse opportunities tailored to their preferences.",
+        image: "/images/projects/job.png",
+        tags: ["All", "Web"],
+        gitUrl: "https://github.com/ariam05/job-postings",
+        previewUrl: "/"
+    },
 ]
 
 const ProjectSection = () => {
@@ -84,11 +93,15 @@ const ProjectSection = () => {
   return (
     <>
         <h2>My Projects</h2>
-        <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+        <div className='flex justify-center mb-10'>
+            <div className='bg-[#0d0628] rounded-3xl py-3 px-3 inline-flex'> 
+        <div className='text-white flex flex-row justify-center items-center gap-5'>
             <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"}/>
             <ProjectTag onClick={handleTagChange} name="UX/UI" isSelected={tag === "UX/UI"}/>
             <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"}/>
             <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"}/>
+        </div>
+        </div>
         </div>
         <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
         {filteredProjects.map((project) => (
