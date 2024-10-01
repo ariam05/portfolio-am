@@ -1,9 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard.jsx';
 import ProjectTag from './ProjectTag.jsx';
-
-
 
 const projectsData = [
     {
@@ -23,7 +21,6 @@ const projectsData = [
         tags: ["All", "Mobile"],
         gitUrl: "https://github.com/ariam05/bear-territory",
         previewUrl: "https://www.figma.com/design/YUozFibW4iptzJtztXX86y/Bear-Territory?m=dev&t=dSWtP3U5g8iSxwVy-1",
-        // design: "https://drive.google.com/file/d/1RnVobdFlEUV3tJ9CreHP1PwKc-fJ1_Da/view?usp=sharing",
     },
     {
         id: 7,
@@ -79,7 +76,7 @@ const projectsData = [
         gitUrl: "https://github.com/ariam05/job-postings",
         previewUrl: "/"
     },
-]
+];
 
 const ProjectSection = () => {
     const [tag, setTag] = useState("Web");
@@ -90,34 +87,35 @@ const ProjectSection = () => {
     const filteredProjects = projectsData.filter((project) =>
         project.tags.includes(tag)
     );
-  return (
-    <>
-        <h2>My Projects</h2>
-        <div className='flex justify-center mb-10'>
-            <div className='bg-[#0d0628] rounded-3xl py-3 px-3 inline-flex'> 
-        <div className='text-white flex flex-row justify-center items-center gap-5'>
-            <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"}/>
-            <ProjectTag onClick={handleTagChange} name="UX/UI" isSelected={tag === "UX/UI"}/>
-            <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"}/>
-            <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"}/>
-        </div>
-        </div>
-        </div>
-        <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
-        {filteredProjects.map((project) => (
-        <ProjectCard 
-        key={project.id} title={project.title} 
-        description={project.description} 
-        imgURL={project.image} 
-        gitUrl={project.gitUrl}
-        previewUrl={project.previewUrl}
-        design={project.design}
-        />
-    ))}
-    </div>
-    </>    
-    
-  );
+
+    return (
+        <section id="projects" className="py-20">
+            <h2>My Projects</h2>
+            <div className='flex justify-center mb-10'>
+                <div className='bg-[#0d0628] rounded-3xl py-3 px-3 inline-flex'> 
+                    <div className=' text-white flex flex-row justify-center items-center gap-5'>
+                        <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
+                        <ProjectTag onClick={handleTagChange} name="UX/UI" isSelected={tag === "UX/UI"} />
+                        <ProjectTag onClick={handleTagChange} name="Mobile" isSelected={tag === "Mobile"} />
+                        <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
+                    </div>
+                </div>
+            </div>
+            <div className='grid md:grid-cols-3 gap-8 md:gap-12'>
+                {filteredProjects.map((project) => (
+                    <ProjectCard 
+                        key={project.id}
+                        title={project.title}
+                        description={project.description}
+                        imgURL={project.image}
+                        gitUrl={project.gitUrl}
+                        previewUrl={project.previewUrl}
+                        design={project.design}
+                    />
+                ))}
+            </div>
+        </section>
+    );
 };
 
 export default ProjectSection;
